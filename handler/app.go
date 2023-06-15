@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"github.com/abilsabili50/weather-app/config"
 	"github.com/abilsabili50/weather-app/database"
 	"github.com/abilsabili50/weather-app/handler/http_handler"
 	"github.com/abilsabili50/weather-app/repository/pg_repo"
@@ -33,5 +34,7 @@ func StartApp() {
 		weatherRoute.GET("/", weatherHandler.ShowWeather)
 	}
 
-	route.Run(":8080")
+	PORT := config.GetPort()
+
+	route.Run(":" + PORT)
 }

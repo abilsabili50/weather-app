@@ -32,6 +32,10 @@ func getEnviron() Dsn {
 	}
 }
 
+func GetPort() string {
+	return os.Getenv("PORT")
+}
+
 func GetPsqlConfig() string {
 	postgreConfig := getEnviron()
 
